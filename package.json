@@ -1,0 +1,25 @@
+{
+  "name": "simple-forum-json-server",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "fake": "node fakeData.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karapetyansa/simple-forum-json-server.git"
+  },
+  "author": "ksa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karapetyansa/simple-forum-json-server/issues"
+  },
+  "homepage": "https://github.com/karapetyansa/simple-forum-json-server#readme",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "json-server": "^0.12.0",
+    "json2csv": "^3.11.4"
+  }
+}
