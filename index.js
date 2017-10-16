@@ -15,8 +15,7 @@ const middlewares = jsonServer.defaults({
 //hack
 middlewares[4] = function(req, res, next) {
   res.header('Cache-Control', 'private, max-age=120')
-  // res.header('Pragma', 'no-cache');
-  res.header('Expires', new Date(Date.now() + 120000))
+  res.header('Expires', new Date(Date.now() + 120000).toGMTString())
   next()
 }
 server.set('etag', false)
