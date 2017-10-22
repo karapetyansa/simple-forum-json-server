@@ -14,7 +14,7 @@ const getPerson = id => ({
   registeredAt: faker.date.past()
 })
 
-const getPost = (author, id) => {
+const getPost = (id, author) => {
   const textPreview = faker.lorem.paragraphs()
   return {
     id,
@@ -35,26 +35,17 @@ const getPost = (author, id) => {
 
 const getRandomInt = max => Math.floor(Math.random() * max) + 1
 
-const numberOfUsers = 10
-const maxNumberOfPosts = 15
+const N_users = 10
+const N_posts = 150
 
-const persons = []
-const posts = []
-
-let counter = 1
-for (let i = 1; i <= numberOfUsers; i++) {
-  let user = getPerson(i)
-  persons.push(user)
-  let numberOfPosts = getRandomInt(maxNumberOfPosts)
-  for (let j = 1; j <= numberOfPosts; j++) {
-    posts.push(getPost(user, counter))
-    counter++
-  }
-}
+const persons = [...Array(N_users)].map((el, i) => getPerson(i + 1))
+const posts = [...Array(N_posts)].map((el, i) =>
+  getPost(i + 1, persons[getRandomInt(N_users) - 1])
+)
 
 const dataBase = { persons, posts }
 
-fs.writeFile('./data/db.json', JSON.stringify(dataBase, null, 2), err => {
+fs.writeFile('./db.json', JSON.stringify(dataBase, null, 2), err => {
   if (err) throw err
   console.log('bigDataSet generated successfully!')
 })
