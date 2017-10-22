@@ -5,7 +5,7 @@ const port = 4000
 const server = jsonServer.create()
 
 // connect db
-const router = jsonServer.router('./data/db.json')
+const router = jsonServer.router('./db.json')
 
 // static host client
 const middlewares = jsonServer.defaults({
