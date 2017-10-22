@@ -36,7 +36,7 @@ const getPost = (id, author) => {
 const getRandomInt = max => Math.floor(Math.random() * max) + 1
 
 const N_users = 10
-const N_posts = 150
+const N_posts = 70
 
 const persons = [...Array(N_users)].map((el, i) => getPerson(i + 1))
 const posts = [...Array(N_posts)].map((el, i) =>
