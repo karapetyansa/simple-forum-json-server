@@ -1,5 +1,6 @@
 **/*.log
 data
+db.json
 node_modules
 tmp
 package-lock.json
